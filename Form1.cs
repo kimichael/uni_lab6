@@ -237,6 +237,7 @@ namespace Lab6
                 case "/":
                     if (CurrentNumber == 0) {
                         textBox1.Text = NAN;
+                        PrevNumber = 0;
                         return;
                     }
                     Result = PrevNumber / CurrentNumber;
@@ -246,6 +247,7 @@ namespace Lab6
             }
 
             textBox1.Text = Convert.ToString(Result).Replace(",", ".");
+            Clipboard.SetText(textBox1.Text);
             PrevNumber = Result;
         }
 
